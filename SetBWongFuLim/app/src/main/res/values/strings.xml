@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SetBWongFuLim</string>
+
+    <string-array name="items">
+        <item>RIS</item>
+        <item>RIT</item>
+        <item>RSD</item>
+        <item>RSW</item>
+    </string-array>
+</resources>

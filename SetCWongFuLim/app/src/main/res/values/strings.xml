@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SetCWongFuLim</string>
+    <string-array name="items">
+        <item>Foundation</item>
+        <item>Diploma</item>
+        <item>Bachelor</item>
+        <item>Master</item>
+        <item>PhD</item>
+    </string-array>
+</resources>

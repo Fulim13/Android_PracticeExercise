@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Set1WongFuLim</string>
+
+    <string-array name="items">
+        <item>Kuala Lumpur</item>
+        <item>Penang</item>
+        <item>Johor</item>
+    </string-array>
+</resources>
