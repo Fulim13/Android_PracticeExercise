@@ -1,0 +1,35 @@
+Implicit Intents
+================
+
+(1) Website
+-----------
+val uri = Uri.parse("https://example.com")
+val i = Intent(Intent.ACTION_VIEW, uri)
+startActivity(i)
+
+(2) Map
+-------
+val uri = Uri.parse("geo:3.215515,101.728186")
+val i = Intent(Intent.ACTION_VIEW, uri)
+startActivity(i)
+
+(3) Email
+---------
+val uri = Uri.parse("mailto:someone@example.com")
+val i = Intent(Intent.ACTION_SENDTO, uri)
+startActivity(i)
+
+(4) SMS
+-------
+val uri = Uri.parse("sms:+60127671159")
+val i = Intent(Intent.ACTION_SENDTO, uri)
+startActivity(i)
+
+(5) Phone
+---------
+val uri = Uri.parse("tel:+60127671159")
+val i = Intent(Intent.ACTION_DIAL, uri)
+startActivity(i)
+
+
+

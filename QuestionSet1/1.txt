@@ -1,0 +1,8 @@
+Text -> lbl, txt
+EditText -> edt > string: plainText, int :Number, Double: Number (decimal)
+CheckBox=> chk
+RadioGroup  => rgp
+RadioButton => rad
+
+Spineer = spn
+Button = btn

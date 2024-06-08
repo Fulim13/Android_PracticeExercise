@@ -1,0 +1,172 @@
+========
+General:
+========
+
+- Project name --> Set[X][StudentName]
+  Example -------> Set0LiawChunVoon
+
+- [MUST] use view binding ---> module-level gradle
+- [DELETE] testing entries --> module-level gradle
+- [DELETE] testing packages
+- String resource [NOT] required
+
+- Generate APK
+- Clean project
+- Manually [DELETE]:
+  - .gradle
+  - .idea
+  - local.properties
+- [ZIP] and submit
+
+
+
+
+=======
+Screen:
+=======
+
+- 1 x activity [MainActivity]
+
+lateinit var binding: ActivityMainBinding
+
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    binding = ActivityMainBinding.inflate(layoutInflater)
+    setContentView(binding.root)
+
+    ...
+}
+
+
+
+
+==============
+UI Components:
+==============
+
+*** [FOLLOW] naming convention ***
+
+- ConstraintLayout
+- Button ------------> btn
+- TextView ----------> txt (output)
+                       lbl (non-output)
+- EditText ----------> edt
+  (a) Plain Text
+  (b) Number
+  (c) Number (Decimal)
+- CheckBox ----------> chk
+- RadioButtonGroup --> rgp
+- RadioButton -------> rad
+- Spinner -----------> spn
+  (a) String array resource
+
+<string-array name="items">
+    <item>Kuala Lumpur</item>
+    <item>Johor</item>
+    <item>Penang</item>
+</string-array>
+
+
+
+
+=======
+Inputs:
+=======
+
+(A) EditText:
+-------------
+- String ---> binding.edt.text.toString().trim()
+- Int ------> binding.edt.text.toString().toIntOrNull() ?: 0
+- Double ---> binding.edt.text.toString().toDoubleOrNull() ?: 0.0
+
+*** May use different default values ***
+
+(B) CheckBox:
+-------------
+- Boolean --> binding.chk.isChecked
+
+
+(C) RadioButton:
+----------------
+- String ---> if (binding.chk.isChecked) "Female" else "Male"
+
+
+(D) Spinner:
+------------
+- String ---> binding.spn.selectedItem.toString()
+
+
+
+
+================================
+Simple Input Validations + Toast
+================================
+
+fun toast(s: String) {
+    Toast.makeText(this, s, Toast.LENGTH_SHORT).show() 
+}
+
+
+if (name == "") {
+    toast("Invalid name")
+    return
+}
+
+if (age < 1 || age > 99) {
+    toast("Invalid age")
+    return
+}
+
+if (price < 0.01) {
+   toast("Invalid price")
+   return
+}
+
+
+
+
+============
+Calculation:
+============
+
+- Basic calculations
+- [when] statement / block
+- [if-else] statement / block
+- Nested
+
+
+
+
+========
+Outputs:
+========
+
+binding.txtOutput.text = """
+    Name    = $name
+    Age     = $age
+    Status  = ${ if (status) "Yes" else "No" }
+    Price   = RM ${ "%.2f".format(price) }
+    Percent = ${ "%.2f".format(percent) } %
+""".trimIndent()
+
+
+
+
+================
+Implicit Intent:
+================
+
+val uri = Uri.parse([URI])
+val i = Intent([ACTION], uri)
+startActivity(i)
+	
+           URI                           ACTION
+           ----------------------------  -------------
+- Website  "https://example.com"         ACTION_VIEW
+- Map      "geo:3.215515,101.728186"     ACTION_VIEW
+- Email    "mailto:someone@example.com"  ACTION_SENDTO
+- SMS      "sms:+60127671159"            ACTION_SENDTO
+- Phone    "tel:+60127671159"            ACTION_DIAL
+
+
+
